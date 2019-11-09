@@ -8,7 +8,7 @@
     tools:context=".ContinueActivity">
 
     <Button
-        android:id="@+id/continue"
+        android:id="@+id/continue_game"
         android:layout_width="139dp"
         android:layout_height="44dp"
         android:layout_marginBottom="140dp"
@@ -29,7 +29,7 @@
         android:fontFamily="@font/roboto"
         android:text="New Game"
         android:textColor="#FAFAFA"
-        app:layout_constraintBottom_toTopOf="@+id/continue"
+        app:layout_constraintBottom_toTopOf="@+id/continue_game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
