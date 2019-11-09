@@ -1,4 +1,7 @@
 package com.example.wander;
 
-public class ObjectivesList {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ObjectivesList extends AppCompatActivity {
+
 }
