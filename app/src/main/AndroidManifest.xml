@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDAQEsypy8cmPPS9ZJ41f0im3Eurh8hYvY"/>
         <activity
             android:name=".TabsActivity"
             android:label="@string/title_activity_tabs"></activity>
