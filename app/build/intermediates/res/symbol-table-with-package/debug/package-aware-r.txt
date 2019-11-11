@@ -1503,10 +1503,8 @@ layout abc_tooltip
 layout activity_continue
 layout activity_current_objective
 layout activity_main
-layout activity_map
 layout activity_objective_detail
 layout activity_objectives
-layout activity_tabs
 layout app_bar_main
 layout content_main
 layout content_tabs
