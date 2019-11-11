@@ -43,8 +43,16 @@
         <activity
             android:name="com.example.wander.TabsActivity"
             android:label="@string/title_activity_tabs" />
-        <activity android:name="com.example.wander.ContinueActivity" />
-        <activity android:name="com.example.wander.MainActivity" >
+        <activity android:name="com.example.wander.ContinueActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wander.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

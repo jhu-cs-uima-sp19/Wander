@@ -1095,8 +1095,12 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable athleticcenter
 drawable avd_hide_password
 drawable avd_show_password
+drawable beach
+drawable bluejaystatue
+drawable brody
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1105,6 +1109,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable charmar
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1130,13 +1135,16 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable gilmanhall
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable homewoodmuseum
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable malonehall
 drawable map_logo_black
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1284,6 +1292,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -1494,10 +1503,12 @@ layout abc_tooltip
 layout activity_continue
 layout activity_current_objective
 layout activity_main
+layout activity_map
 layout activity_objective_detail
 layout activity_objectives
 layout activity_tabs
 layout app_bar_main
+layout content_main
 layout content_tabs
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -1590,6 +1601,8 @@ string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string navigation_drawer_close
+string navigation_drawer_open
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
