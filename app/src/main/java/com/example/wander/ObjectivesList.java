@@ -51,6 +51,7 @@ public class ObjectivesList extends AppCompatActivity {
                 intent.putExtra("location", objective.getLocation());
                 intent.putExtra("when", objective.getWhen());
                 intent.putExtra("found", objective.getFound());
+                intent.putExtra("image", objective.getImage());
 
                 startActivity(intent);
             }
