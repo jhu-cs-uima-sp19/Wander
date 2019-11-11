@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.wander.MainActivity"
         android:label="@string/title_main"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/content_tabs" />
 
     <fragment
         android:id="@+id/navigation_dashboard"

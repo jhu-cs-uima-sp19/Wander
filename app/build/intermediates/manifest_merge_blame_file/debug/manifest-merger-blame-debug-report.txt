@@ -10,40 +10,121 @@
 9        android:targetSdkVersion="29" />
 9-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml
 10
-11    <application
-11-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:5:5-20:19
-12        android:allowBackup="true"
-12-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] /Users/khong/.gradle/caches/transforms-2/files-2.1/46da25c3e2ae6308b2227b660caa604d/core-1.0.1/AndroidManifest.xml:22:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:10:9-35
-19        android:theme="@style/AppTheme" >
-19-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:11:9-40
-20        <activity android:name="com.example.wander.ContinueActivity" />
-20-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:12:9-63
-20-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:12:19-51
-21        <activity android:name="com.example.wander.MainActivity" >
-21-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:13:9-19:20
-21-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:13:19-47
-22            <intent-filter>
-22-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:14:13-18:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:15:17-69
-23-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:15:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:17:17-77
-25-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:17:27-74
-26            </intent-filter>
-27        </activity>
-28    </application>
-29
-30</manifest>
+11    <permission
+11-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:29:5-31:46
+12        android:name="com.example.wander.permission.MAPS_RECEIVE"
+12-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:30:9-66
+13        android:protectionLevel="signature" />
+13-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:31:9-44
+14
+15    <uses-permission android:name="com.example.wander.permission.MAPS_RECEIVE" />
+15-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:32:5-81
+15-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:32:22-79
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:33:5-80
+16-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:33:22-78
+17    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+17-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:34:5-97
+17-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:34:22-95
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+18-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:35:5-80
+18-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:35:22-78
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+19-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:36:5-78
+19-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:36:22-76
+20    <!-- Include required permissions for Google Maps API to run. -->
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+21-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+21-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:23:22-76
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+22-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:24:22-64
+23
+24    <uses-feature
+24-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+25        android:glEsVersion="0x00020000"
+25-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+26        android:required="true" />
+26-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+27
+28    <application
+28-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:5:5-28:19
+29        android:allowBackup="true"
+29-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:6:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.1.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/7f6c41cc2a14c0fbaa8d0166c17dc544/core-1.1.0/AndroidManifest.xml:24:18-86
+31        android:debuggable="true"
+32        android:icon="@mipmap/ic_launcher"
+32-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:7:9-43
+33        android:label="@string/app_name"
+33-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:8:9-41
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:9:9-54
+35        android:supportsRtl="true"
+35-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:10:9-35
+36        android:testOnly="true"
+37        android:theme="@style/AppTheme" >
+37-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:11:9-40
+38        <meta-data
+38-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:12:9-123
+39            android:name="com.google.android.geo.API_KEY"
+39-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:12:20-65
+40            android:value="AIzaSyDAQEsypy8cmPPS9ZJ41f0im3Eurh8hYvY" />
+40-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:12:66-121
+41
+42        <activity
+42-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:13:9-15:68
+43            android:name="com.example.wander.TabsActivity"
+43-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:14:13-41
+44            android:label="@string/title_activity_tabs" />
+44-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:15:13-56
+45        <activity android:name="com.example.wander.ContinueActivity" />
+45-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:16:9-54
+45-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:16:19-51
+46        <activity android:name="com.example.wander.MainActivity" >
+46-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:17:9-23:20
+46-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:17:19-47
+47            <intent-filter>
+47-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:18:13-22:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:19:17-69
+48-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:19:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:21:17-77
+50-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:21:27-74
+51            </intent-filter>
+52        </activity>
+53
+54        <meta-data
+54-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:25:9-27:57
+55            android:name="preloaded_fonts"
+55-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:26:13-43
+56            android:resource="@array/preloaded_fonts" />
+56-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:27:13-54
+57        <!-- Needs to be explicitly declared on P+ -->
+58        <uses-library
+58-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+59            android:name="org.apache.http.legacy"
+59-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+60            android:required="false" />
+60-->[com.google.android.gms:play-services-maps:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/1b9026f860ab6935418a182675a0a44a/play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+61
+62        <activity
+62-->[com.google.android.gms:play-services-base:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+63            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+63-->[com.google.android.gms:play-services-base:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+64            android:exported="false"
+64-->[com.google.android.gms:play-services-base:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.google.android.gms:play-services-base:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+66
+67        <meta-data
+67-->[com.google.android.gms:play-services-basement:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/5c700332d913c26d746f07c799ab2144/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+68            android:name="com.google.android.gms.version"
+68-->[com.google.android.gms:play-services-basement:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/5c700332d913c26d746f07c799ab2144/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+69            android:value="@integer/google_play_services_version" />
+69-->[com.google.android.gms:play-services-basement:17.0.0] /Users/khong/.gradle/caches/transforms-2/files-2.1/5c700332d913c26d746f07c799ab2144/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+70    </application>
+71
+72</manifest>
