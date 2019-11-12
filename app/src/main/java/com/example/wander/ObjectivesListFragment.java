@@ -26,15 +26,15 @@ public class ObjectivesListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_objectives, container, false);
         //setContentView(R.layout.activity_objectives);
 
-        ObjectiveItem first = new ObjectiveItem("39.331089, -76.619615", "-1", false, "bluejaystatue");
+        ObjectiveItem first = new ObjectiveItem("39.331089, -76.619615", "-1", false, R.drawable.bluejaystatue);
         objectiveItems.add(0, first);
-        ObjectiveItem second = new ObjectiveItem("39.328436, -76.619415", "-1", false, "brody");
+        ObjectiveItem second = new ObjectiveItem("39.328436, -76.619415", "-1", false, R.drawable.brody);
         objectiveItems.add(1, second);
-        ObjectiveItem third = new ObjectiveItem("39.332122, -76.621277", "-1", false, "athleticcenter");
+        ObjectiveItem third = new ObjectiveItem("39.332122, -76.621277", "-1", false, R.drawable.athleticcenter);
         objectiveItems.add(2, third);
-        ObjectiveItem fourth = new ObjectiveItem("39.328930, -76.617253", "-1", false, "charmar");
+        ObjectiveItem fourth = new ObjectiveItem("39.328930, -76.617253", "-1", false, R.drawable.charmar);
         objectiveItems.add(3, fourth);
-        ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, "beach");
+        ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, R.drawable.beach);
         objectiveItems.add(4, fifth);
 
 

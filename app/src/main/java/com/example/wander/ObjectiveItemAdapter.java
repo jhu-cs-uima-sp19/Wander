@@ -37,10 +37,11 @@ public class ObjectiveItemAdapter extends ArrayAdapter<ObjectiveItem> {
 
         TextView objtView = (TextView) objectiveView.findViewById(R.id.objective_text);
         TextView foundView = (TextView) objectiveView.findViewById(R.id.found_view);
-        ImageView objiView = (ImageView) objectiveView.findViewById(R.id.objective_image);
+        ImageView imgView = (ImageView) objectiveView.findViewById(R.id.objective_image);
 
         objtView.setText(ob.getLocation());
         foundView.setText(ob.getFound() ? "Found" : "Not Found");
+        imgView.setImageResource(ob.getImage());
 
         return objectiveView;
     }
