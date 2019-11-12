@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +15,9 @@ public class ObjectivesList extends AppCompatActivity {
     private ListView objectivesList;
     private ObjectiveItemAdapter aa;
 
-    static ArrayList<ObjectiveItem> objectiveItems = new ArrayList<ObjectiveItem>();;
+    static ArrayList<ObjectiveItem> objectiveItems = new ArrayList<ObjectiveItem>();
+    static ArrayList<ObjectiveItem> displayedObjectiveItems = new ArrayList<ObjectiveItem>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,42 @@ public class ObjectivesList extends AppCompatActivity {
         objectiveItems.add(3, fourth);
         ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, "beach");
         objectiveItems.add(4, fifth);
+        ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, "malonehall");
+        objectiveItems.add(5, sixth);
+        ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, "homewoodmuseum");
+        objectiveItems.add(6, seventh);
+        ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, "unimini");
+        objectiveItems.add(7, eighth);
+        ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, "gilmanhall");
+        objectiveItems.add(8, ninth);
+
+        Random rand = new Random();
+        int temp;
+        int[] usedIndices = new int[5];
+        boolean used = false;
+
+        for (int i = 0; i < 5; i ++) {
+            temp = rand.nextInt(8);
+            for (int j = 0; j < 5; j++) {
+                if (usedIndices[j] == temp) {
+                    used = true;
+                }
+            }
+            if (!used) {
+                usedIndices[i] = temp;
+            } else {
+                i--;
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            displayedObjectiveItems.add(i, objectiveItems.get(usedIndices[i]));
+        }
 
 
         objectivesList = (ListView) findViewById(R.id.objectivelist);
         // make array adapter to bind arraylist to listview with new custom item layout
-        aa = new ObjectiveItemAdapter(this, R.layout.objective_item_layout, objectiveItems);
+        aa = new ObjectiveItemAdapter(this, R.layout.objective_item_layout, displayedObjectiveItems);
         objectivesList.setAdapter(aa);
 
         registerForContextMenu(objectivesList);
