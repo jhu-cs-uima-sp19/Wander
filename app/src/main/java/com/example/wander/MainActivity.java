@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     final Fragment fragment1 = new MapFragment();
     final Fragment fragment2 = new CurrentObjectiveActivity();
+    final Fragment fragment3 = new ObjectivesListFragment();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        fm.beginTransaction().add(R.id.container, fragment3, "2").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.container,fragment1, "1").commit();
     }
@@ -66,10 +68,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     active = fragment2;
                     return true;
 
-                /*case R.id.navigation_notifications:
+                case R.id.navigation_objectives:
                     fm.beginTransaction().hide(active).show(fragment3).commit();
                     active = fragment3;
-                    return true;*/
+                    return true;
             }
             return false;
         }
