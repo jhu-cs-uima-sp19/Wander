@@ -34,7 +34,7 @@ public class ObjectivesListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_objectives, container, false);
         //setContentView(R.layout.activity_objectives);
 
-        SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = this.getActivity().getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
         boolean newGame = sharedPref.getBoolean("startOver", false);
 
         Gson gson = new Gson();

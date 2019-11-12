@@ -146,24 +146,24 @@ public final class R {
         public static final int line1 = 0x7f0a0088;
         public static final int line3 = 0x7f0a0089;
         public static final int nav_controller_view_tag = 0x7f0a0098;
-        public static final int normal = 0x7f0a00a7;
-        public static final int notification_background = 0x7f0a00a8;
-        public static final int notification_main_column = 0x7f0a00a9;
-        public static final int notification_main_column_container = 0x7f0a00aa;
-        public static final int right_icon = 0x7f0a00bc;
-        public static final int right_side = 0x7f0a00bd;
-        public static final int tag_accessibility_actions = 0x7f0a00ea;
-        public static final int tag_accessibility_clickable_spans = 0x7f0a00eb;
-        public static final int tag_accessibility_heading = 0x7f0a00ec;
-        public static final int tag_accessibility_pane_title = 0x7f0a00ed;
-        public static final int tag_screen_reader_focusable = 0x7f0a00ee;
-        public static final int tag_transition_group = 0x7f0a00ef;
-        public static final int tag_unhandled_key_event_manager = 0x7f0a00f0;
-        public static final int tag_unhandled_key_listeners = 0x7f0a00f1;
-        public static final int text = 0x7f0a00f3;
-        public static final int text2 = 0x7f0a00f4;
-        public static final int time = 0x7f0a00fd;
-        public static final int title = 0x7f0a00fe;
+        public static final int normal = 0x7f0a00a8;
+        public static final int notification_background = 0x7f0a00a9;
+        public static final int notification_main_column = 0x7f0a00aa;
+        public static final int notification_main_column_container = 0x7f0a00ab;
+        public static final int right_icon = 0x7f0a00bd;
+        public static final int right_side = 0x7f0a00be;
+        public static final int tag_accessibility_actions = 0x7f0a00eb;
+        public static final int tag_accessibility_clickable_spans = 0x7f0a00ec;
+        public static final int tag_accessibility_heading = 0x7f0a00ed;
+        public static final int tag_accessibility_pane_title = 0x7f0a00ee;
+        public static final int tag_screen_reader_focusable = 0x7f0a00ef;
+        public static final int tag_transition_group = 0x7f0a00f0;
+        public static final int tag_unhandled_key_event_manager = 0x7f0a00f1;
+        public static final int tag_unhandled_key_listeners = 0x7f0a00f2;
+        public static final int text = 0x7f0a00f4;
+        public static final int text2 = 0x7f0a00f5;
+        public static final int time = 0x7f0a00fe;
+        public static final int title = 0x7f0a00ff;
     }
     public static final class integer {
         private integer() {}

@@ -94,7 +94,6 @@ public final class R {
         public static final int italic = 0x7f0a0082;
         public static final int line1 = 0x7f0a0088;
         public static final int line3 = 0x7f0a0089;
-<<<<<<< Updated upstream
         public static final int normal = 0x7f0a00a8;
         public static final int notification_background = 0x7f0a00a9;
         public static final int notification_main_column = 0x7f0a00aa;
@@ -117,30 +116,6 @@ public final class R {
         public static final int transition_position = 0x7f0a0107;
         public static final int transition_scene_layoutid_cache = 0x7f0a0108;
         public static final int transition_transform = 0x7f0a0109;
-=======
-        public static final int normal = 0x7f0a00a7;
-        public static final int notification_background = 0x7f0a00a8;
-        public static final int notification_main_column = 0x7f0a00a9;
-        public static final int notification_main_column_container = 0x7f0a00aa;
-        public static final int parent_matrix = 0x7f0a00b5;
-        public static final int right_icon = 0x7f0a00bc;
-        public static final int right_side = 0x7f0a00bd;
-        public static final int save_image_matrix = 0x7f0a00bf;
-        public static final int save_non_transition_alpha = 0x7f0a00c0;
-        public static final int save_scale_type = 0x7f0a00c1;
-        public static final int tag_transition_group = 0x7f0a00ef;
-        public static final int tag_unhandled_key_event_manager = 0x7f0a00f0;
-        public static final int tag_unhandled_key_listeners = 0x7f0a00f1;
-        public static final int text = 0x7f0a00f3;
-        public static final int text2 = 0x7f0a00f4;
-        public static final int time = 0x7f0a00fd;
-        public static final int title = 0x7f0a00fe;
-        public static final int transition_current_scene = 0x7f0a0104;
-        public static final int transition_layout_save = 0x7f0a0105;
-        public static final int transition_position = 0x7f0a0106;
-        public static final int transition_scene_layoutid_cache = 0x7f0a0107;
-        public static final int transition_transform = 0x7f0a0108;
->>>>>>> Stashed changes
     }
     public static final class integer {
         private integer() {}
