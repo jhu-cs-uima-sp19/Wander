@@ -22,9 +22,20 @@
         android:id="@+id/imageView"
         android:layout_width="275dp"
         android:layout_height="284dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/found"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/malonehall" />
+
+    <Button
+        android:id="@+id/found"
+        android:layout_width="166dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="152dp"
+        android:text="Found It!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
