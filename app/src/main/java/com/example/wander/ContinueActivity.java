@@ -2,7 +2,9 @@ package com.example.wander;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +20,10 @@ public class ContinueActivity extends AppCompatActivity {
         newGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
-                intent.putExtra("startOver", true);
+                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("newGame", true);
+                editor.commit();
                 startActivity(intent);
             }
         });
@@ -28,6 +33,10 @@ public class ContinueActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
                 intent.putExtra("startOver", false);
+                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("newGame", false);
+                editor.commit();
                 startActivity(intent);
             }
         });

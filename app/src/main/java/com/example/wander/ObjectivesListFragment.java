@@ -1,6 +1,8 @@
 package com.example.wander;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,8 +13,12 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ObjectivesListFragment extends Fragment {
     private ListView objectivesList;
@@ -28,28 +34,47 @@ public class ObjectivesListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_objectives, container, false);
         //setContentView(R.layout.activity_objectives);
 
-        ObjectiveItem first = new ObjectiveItem("39.331089, -76.619615", "-1", false, R.drawable.bluejaystatue);
-        objectiveItems.add(0, first);
-        ObjectiveItem second = new ObjectiveItem("39.328436, -76.619415", "-1", false, R.drawable.brody);
-        objectiveItems.add(1, second);
-        ObjectiveItem third = new ObjectiveItem("39.332122, -76.621277", "-1", false, R.drawable.athleticcenter);
-        objectiveItems.add(2, third);
-        ObjectiveItem fourth = new ObjectiveItem("39.328930, -76.617253", "-1", false, R.drawable.charmar);
-        objectiveItems.add(3, fourth);
-        ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, R.drawable.beach);
-        objectiveItems.add(4, fifth);
-        ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, R.drawable.malonehall);
-        objectiveItems.add(5, sixth);
-        ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, R.drawable.homewoodmuseum);
-        objectiveItems.add(6, seventh);
-        ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, R.drawable.unimini);
-        objectiveItems.add(7, eighth);
-        ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, R.drawable.gilmanhall);
-        objectiveItems.add(8, ninth);
+        SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        boolean newGame = sharedPref.getBoolean("startOver", false);
 
-        Collections.shuffle(objectiveItems);
-        for (int i = 0; i < 5; i++) {
-            displayedObjectiveItems.add(objectiveItems.get(i));
+        Gson gson = new Gson();
+
+        if (newGame) {
+            ObjectiveItem first = new ObjectiveItem("39.331089, -76.619615", "-1", false, R.drawable.bluejaystatue);
+            objectiveItems.add(0, first);
+            ObjectiveItem second = new ObjectiveItem("39.328436, -76.619415", "-1", false, R.drawable.brody);
+            objectiveItems.add(1, second);
+            ObjectiveItem third = new ObjectiveItem("39.332122, -76.621277", "-1", false, R.drawable.athleticcenter);
+            objectiveItems.add(2, third);
+            ObjectiveItem fourth = new ObjectiveItem("39.328930, -76.617253", "-1", false, R.drawable.charmar);
+            objectiveItems.add(3, fourth);
+            ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, R.drawable.beach);
+            objectiveItems.add(4, fifth);
+            ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, R.drawable.malonehall);
+            objectiveItems.add(5, sixth);
+            ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, R.drawable.homewoodmuseum);
+            objectiveItems.add(6, seventh);
+            ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, R.drawable.unimini);
+            objectiveItems.add(7, eighth);
+            ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, R.drawable.gilmanhall);
+            objectiveItems.add(8, ninth);
+
+            Collections.shuffle(objectiveItems);
+            for (int i = 0; i < 5; i++) {
+                displayedObjectiveItems.add(objectiveItems.get(i));
+            }
+
+            String json = gson.toJson(displayedObjectiveItems);
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("newGame", false);
+            editor.putString("objectiveList", json);
+            editor.commit();
+        }
+        else {
+            String response = sharedPref.getString("objectiveList", "");
+            displayedObjectiveItems = gson.fromJson(response,
+                    new TypeToken<List<ObjectiveItem>>(){}.getType());
         }
 
         objectivesList = rootView.findViewById(R.id.objectivelist);
