@@ -25,11 +25,12 @@ public class ObjectiveDetail extends AppCompatActivity {
         TextView date_detail = (TextView) findViewById(R.id.when_text);
 
         Bundle extras = getIntent().getExtras();
-        double amount = extras.getDouble("amount", 1);
-        String type = extras.getString("type");
-        String date = extras.getString("date");
+        String image = extras.getString("image");
+        String location = extras.getString("location");
+        String date = extras.getString("when");
 
-        location_detail.setText(type);
+        //location_image.setImage(image);
+        location_detail.setText(location);
         date_detail.setText(date);
     }
 

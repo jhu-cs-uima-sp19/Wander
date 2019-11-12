@@ -2,6 +2,7 @@ package com.example.wander;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,20 +47,19 @@ public class ObjectivesListFragment extends Fragment {
 
         aa.notifyDataSetChanged();  // to refresh items in the list
 
-        /*// program a short click on the list item
+        // program a short click on the list item
         objectivesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ObjectiveItem objective = aa.getItem(position);
-
-                Intent intent = new Intent(ObjectivesList.this, ObjectiveDetail.class);
+                Intent intent = new Intent(getActivity(), ObjectiveDetail.class);
                 intent.putExtra("location", objective.getLocation());
                 intent.putExtra("when", objective.getWhen());
                 intent.putExtra("found", objective.getFound());
                 intent.putExtra("image", objective.getImage());
-
+                Log.d("myTag", "HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
                 startActivity(intent);
             }
-        });*/
+        });
         return rootView;
     }
 }
