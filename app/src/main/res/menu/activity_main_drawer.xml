@@ -8,8 +8,8 @@
             android:id="@+id/nav_main"
             android:title="Current Game" />
         <item
-            android:id="@+id/nav_history"
-            android:title="History" />
+            android:id="@+id/nav_quit"
+            android:title="Quit Game" />
     </group>
 
 </menu>

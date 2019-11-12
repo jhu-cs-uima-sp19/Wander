@@ -1321,10 +1321,11 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id nav_balance
 id nav_controller_view_tag
-id nav_history
 id nav_host_fragment
 id nav_main
+id nav_quit
 id nav_view
+id nav_view2
 id navigation_current_objective
 id navigation_dashboard
 id navigation_header_container
@@ -1427,7 +1428,6 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id total_text
 id touch_outside
 id transition_current_scene
 id transition_layout_save
