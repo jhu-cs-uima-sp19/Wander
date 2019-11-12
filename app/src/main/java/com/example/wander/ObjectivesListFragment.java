@@ -12,12 +12,14 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ObjectivesListFragment extends Fragment {
     private ListView objectivesList;
     private ObjectiveItemAdapter aa;
 
-    static ArrayList<ObjectiveItem> objectiveItems = new ArrayList<ObjectiveItem>();;
+    static ArrayList<ObjectiveItem> objectiveItems = new ArrayList<ObjectiveItem>();
+    static ArrayList<ObjectiveItem> displayedObjectiveItems = new ArrayList<ObjectiveItem>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,11 +38,23 @@ public class ObjectivesListFragment extends Fragment {
         objectiveItems.add(3, fourth);
         ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, R.drawable.beach);
         objectiveItems.add(4, fifth);
+        ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, R.drawable.malonehall);
+        objectiveItems.add(5, sixth);
+        ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, R.drawable.homewoodmuseum);
+        objectiveItems.add(6, seventh);
+        ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, R.drawable.unimini);
+        objectiveItems.add(7, eighth);
+        ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, R.drawable.gilmanhall);
+        objectiveItems.add(8, ninth);
 
+        Collections.shuffle(objectiveItems);
+        for (int i = 0; i < 5; i++) {
+            displayedObjectiveItems.add(objectiveItems.get(i));
+        }
 
         objectivesList = rootView.findViewById(R.id.objectivelist);
         // make array adapter to bind arraylist to listview with new custom item layout
-        aa = new ObjectiveItemAdapter(getActivity().getApplicationContext(), R.layout.objective_item_layout, objectiveItems);
+        aa = new ObjectiveItemAdapter(getActivity().getApplicationContext(), R.layout.objective_item_layout, displayedObjectiveItems);
         objectivesList.setAdapter(aa);
 
         registerForContextMenu(objectivesList);
