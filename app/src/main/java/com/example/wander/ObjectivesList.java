@@ -34,13 +34,13 @@ public class ObjectivesList extends AppCompatActivity {
         objectiveItems.add(3, fourth);
         ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, R.drawable.beach);
         objectiveItems.add(4, fifth);
-        ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, "malonehall");
+        ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, R.drawable.malonehall);
         objectiveItems.add(5, sixth);
-        ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, "homewoodmuseum");
+        ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, R.drawable.homewoodmuseum);
         objectiveItems.add(6, seventh);
-        ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, "unimini");
+        ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, R.drawable.unimini);
         objectiveItems.add(7, eighth);
-        ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, "gilmanhall");
+        ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, R.drawable.gilmanhall);
         objectiveItems.add(8, ninth);
 
         Random rand = new Random();
