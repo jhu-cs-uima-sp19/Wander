@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/navigation_current_objective"
-        android:icon="@drawable/map_logo_black"
+        android:icon="@drawable/current_objective_black"
         android:title="@string/title_current_objective" />
 
     <item
         android:id="@+id/navigation_objectives"
-        android:icon="@drawable/map_logo_black"
+        android:icon="@drawable/objectives_black"
         android:title="@string/title_objectives" />
 
 </menu>

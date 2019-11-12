@@ -39,9 +39,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDAQEsypy8cmPPS9ZJ41f0im3Eurh8hYvY" />
 
-        <activity
-            android:name="com.example.wander.TabsActivity"
-            android:label="@string/title_activity_tabs" />
         <activity android:name="com.example.wander.ContinueActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

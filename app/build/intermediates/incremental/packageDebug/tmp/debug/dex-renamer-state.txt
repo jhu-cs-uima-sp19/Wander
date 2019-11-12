@@ -1,4 +1,4 @@
-#Mon Nov 11 17:21:17 EST 2019
-base.0=C\:\\Users\\hjliz\\UIMA\\GroupApp2\\Wander\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Mon Nov 11 19:56:19 EST 2019
+base.0=/Users/khong/Desktop/uima/Wander/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
