@@ -5613,6 +5613,7 @@ public final class R {
     public static final int objectives_black=0x7f0800a0;
     public static final int tooltip_frame_dark=0x7f0800a1;
     public static final int tooltip_frame_light=0x7f0800a2;
+    public static final int unimini=0x7f0800a3;
   }
   public static final class font {
     public static final int roboto=0x7f090000;

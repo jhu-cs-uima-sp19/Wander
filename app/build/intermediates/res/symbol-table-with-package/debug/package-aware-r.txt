@@ -1165,6 +1165,7 @@ drawable notify_panel_notification_icon_bg
 drawable objectives_black
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable unimini
 font roboto
 font roboto_thin
 id ALT

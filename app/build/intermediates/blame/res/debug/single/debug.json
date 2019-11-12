@@ -1124,6 +1124,10 @@
         "source": "/Users/khong/.gradle/caches/transforms-2/files-2.1/9ee5da6fca20f6f07dce6c73fc4ca33a/material-1.0.0/res/color/mtrl_btn_bg_color_selector.xml"
     },
     {
+        "merged": "/Users/khong/Desktop/uima/Wander/app/build/intermediates/res/merged/debug/drawable_unimini.png.flat",
+        "source": "/Users/khong/Desktop/uima/Wander/app/src/main/res/drawable/unimini.png"
+    },
+    {
         "merged": "/Users/khong/Desktop/uima/Wander/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/khong/Desktop/uima/Wander/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
