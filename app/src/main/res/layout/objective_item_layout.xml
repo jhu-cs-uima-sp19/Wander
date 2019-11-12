@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/objective_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="77dp"
         android:gravity="left"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -17,7 +17,7 @@
     <TextView
         android:id="@+id/found_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="25"
         android:gravity="left"
         android:paddingLeft="10dp"

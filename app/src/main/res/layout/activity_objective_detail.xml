@@ -27,8 +27,8 @@
 
     <ImageView
         android:id="@+id/where_image"
-        android:layout_width="187dp"
-        android:layout_height="160dp"
+        android:layout_width="344dp"
+        android:layout_height="298dp"
         app:layout_constraintBottom_toTopOf="@+id/where_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
