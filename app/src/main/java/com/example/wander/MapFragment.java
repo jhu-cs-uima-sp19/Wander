@@ -1,10 +1,13 @@
 package com.example.wander;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.Manifest;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -34,7 +37,12 @@ public class MapFragment extends Fragment {
                 LatLng blueJay = new LatLng(39.331089, -76.619615);
                 mMap.addMarker(new MarkerOptions().position(blueJay).title("Marker at Blue Jay Statue"));
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(blueJay,15));
-
+                //requestPermissions(FINE_LOCATION_PERMS, 1);
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    mMap.setMyLocationEnabled(true);
+                }
+                //mMap.setMyLocationEnabled(true);
 
             }
         });
