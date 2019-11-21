@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/objective_image"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@drawable/beach"
+            android:scaleType="centerCrop"/>
+
+    </FrameLayout>
 
     <TextView
         android:id="@+id/objective_text"
         android:layout_width="wrap_content"
-        android:layout_height="77dp"
-        android:gravity="left"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="objective0"
-        android:textSize="14dp"></TextView>
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        tools:text="The Beach"
+        android:textStyle="bold"
+        android:paddingTop="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/found_view"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="25"
-        android:gravity="left"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="FOUND"
-        android:textSize="14dp"></TextView>
-
-    <ImageView
-        android:id="@+id/objective_image"
-        android:layout_height="match_parent"
-        android:layout_width="0dp"
-        android:layout_weight="25"
-        android:paddingRight="10dp">
-    </ImageView>
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        tools:text="Found!"
+        android:gravity="center_horizontal"/>
 
 </LinearLayout>

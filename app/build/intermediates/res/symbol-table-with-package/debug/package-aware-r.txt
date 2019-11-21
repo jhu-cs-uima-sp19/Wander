@@ -1286,6 +1286,7 @@ id found
 id found_view
 id ghost_view
 id gone
+id gridview
 id group_divider
 id groups
 id home
@@ -1537,6 +1538,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout objective_grid
 layout objective_item_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
