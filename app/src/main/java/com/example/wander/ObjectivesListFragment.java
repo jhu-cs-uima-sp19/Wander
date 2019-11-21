@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -21,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ObjectivesListFragment extends Fragment {
-    private ListView objectivesList;
+    private GridView objectivesList;
     private ObjectiveItemAdapter aa;
 
     static ArrayList<ObjectiveItem> objectiveItems = new ArrayList<ObjectiveItem>();
