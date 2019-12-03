@@ -61,7 +61,7 @@ public class ObjectivesListFragment extends Fragment {
             objectiveItems.add(8, ninth);
 
             Collections.shuffle(objectiveItems);
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 4; i++) {
                 displayedObjectiveItems.add(objectiveItems.get(i));
             }
 
