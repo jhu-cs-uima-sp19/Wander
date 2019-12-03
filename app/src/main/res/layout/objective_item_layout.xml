@@ -20,23 +20,12 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/objective_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="2sp"
-        tools:text="The Beach"
-        android:textStyle="bold"
-        android:paddingTop="4dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:gravity="center_horizontal"/>
-
-    <TextView
         android:id="@+id/found_view"
-        android:layout_width="wrap_content"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
         android:textSize="18sp"
-        tools:text="Found!"
-        android:gravity="center_horizontal"/>
+        tools:text="Found!" />
 
 </GridLayout>

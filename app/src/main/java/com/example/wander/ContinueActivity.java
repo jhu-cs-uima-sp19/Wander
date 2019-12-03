@@ -32,7 +32,6 @@ public class ContinueActivity extends AppCompatActivity {
         continueGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
-                intent.putExtra("startOver", false);
                 SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("newGame", false);

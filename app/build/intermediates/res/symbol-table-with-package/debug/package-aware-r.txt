@@ -1343,7 +1343,6 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id objective_image
-id objective_text
 id objectivelist
 id off
 id on

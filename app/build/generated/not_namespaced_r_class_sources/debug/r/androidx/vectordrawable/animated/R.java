@@ -131,20 +131,20 @@ public final class R {
         public static final int notification_background = 0x7f0a00ab;
         public static final int notification_main_column = 0x7f0a00ac;
         public static final int notification_main_column_container = 0x7f0a00ad;
-        public static final int right_icon = 0x7f0a00bf;
-        public static final int right_side = 0x7f0a00c0;
-        public static final int tag_accessibility_actions = 0x7f0a00ed;
-        public static final int tag_accessibility_clickable_spans = 0x7f0a00ee;
-        public static final int tag_accessibility_heading = 0x7f0a00ef;
-        public static final int tag_accessibility_pane_title = 0x7f0a00f0;
-        public static final int tag_screen_reader_focusable = 0x7f0a00f1;
-        public static final int tag_transition_group = 0x7f0a00f2;
-        public static final int tag_unhandled_key_event_manager = 0x7f0a00f3;
-        public static final int tag_unhandled_key_listeners = 0x7f0a00f4;
-        public static final int text = 0x7f0a00f6;
-        public static final int text2 = 0x7f0a00f7;
-        public static final int time = 0x7f0a0100;
-        public static final int title = 0x7f0a0101;
+        public static final int right_icon = 0x7f0a00be;
+        public static final int right_side = 0x7f0a00bf;
+        public static final int tag_accessibility_actions = 0x7f0a00ec;
+        public static final int tag_accessibility_clickable_spans = 0x7f0a00ed;
+        public static final int tag_accessibility_heading = 0x7f0a00ee;
+        public static final int tag_accessibility_pane_title = 0x7f0a00ef;
+        public static final int tag_screen_reader_focusable = 0x7f0a00f0;
+        public static final int tag_transition_group = 0x7f0a00f1;
+        public static final int tag_unhandled_key_event_manager = 0x7f0a00f2;
+        public static final int tag_unhandled_key_listeners = 0x7f0a00f3;
+        public static final int text = 0x7f0a00f5;
+        public static final int text2 = 0x7f0a00f6;
+        public static final int time = 0x7f0a00ff;
+        public static final int title = 0x7f0a0100;
     }
     public static final class integer {
         private integer() {}
