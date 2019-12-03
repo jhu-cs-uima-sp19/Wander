@@ -21,15 +21,18 @@ public class ObjectiveDetail extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         ImageView location_image = (ImageView) findViewById(R.id.where_image);
-        TextView location_detail = (TextView) findViewById(R.id.where_text);
+        TextView location_name = (TextView) findViewById(R.id.where_text);
+        TextView location_desc = (TextView) findViewById(R.id.desc_text);
         TextView date_detail = (TextView) findViewById(R.id.when_text);
 
         Bundle extras = getIntent().getExtras();
         int image = extras.getInt("image");
-        String location = extras.getString("location");
+        String location = extras.getString("name");
+        String description = extras.getString("description");
         String date = extras.getString("when");
 
-        location_detail.setText(location);
+        location_name.setText(location);
+        location_desc.setText(description);
         date_detail.setText(date);
         location_image.setImageResource(image);
     }

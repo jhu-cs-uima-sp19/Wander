@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,27 +42,30 @@ public class ObjectivesListFragment extends Fragment {
         Gson gson = new Gson();
 
         if (newGame) {
-            ObjectiveItem first = new ObjectiveItem("39.331089, -76.619615", "-1", false, R.drawable.bluejaystatue);
-            objectiveItems.add(0, first);
-            ObjectiveItem second = new ObjectiveItem("39.328436, -76.619415", "-1", false, R.drawable.brody);
-            objectiveItems.add(1, second);
-            ObjectiveItem third = new ObjectiveItem("39.332122, -76.621277", "-1", false, R.drawable.athleticcenter);
-            objectiveItems.add(2, third);
-            ObjectiveItem fourth = new ObjectiveItem("39.328930, -76.617253", "-1", false, R.drawable.charmar);
-            objectiveItems.add(3, fourth);
-            ObjectiveItem fifth = new ObjectiveItem("39.329096, -76.618497", "-1", false, R.drawable.beach);
-            objectiveItems.add(4, fifth);
-            ObjectiveItem sixth = new ObjectiveItem("39.326191 -76.620853", "-1", false, R.drawable.malonehall);
-            objectiveItems.add(5, sixth);
-            ObjectiveItem seventh = new ObjectiveItem("39.329722, -76.618962", "-1", false, R.drawable.homewoodmuseum);
-            objectiveItems.add(6, seventh);
-            ObjectiveItem eighth = new ObjectiveItem("39.327828, -76.615817", "-1", false, R.drawable.unimini);
-            objectiveItems.add(7, eighth);
-            ObjectiveItem ninth = new ObjectiveItem("39.328982, -76.621362", "-1", false, R.drawable.gilmanhall);
-            objectiveItems.add(8, ninth);
+            ObjectiveItem obj1 = new ObjectiveItem("Blue Jay Statue", 39.331089, -76.619615, "-1", false, R.drawable.bluejaystatue);
+            ObjectiveItem obj2 = new ObjectiveItem("Brody Learning Commons", 39.328436, -76.619415, "-1", false, R.drawable.brody);
+            ObjectiveItem obj3 = new ObjectiveItem("O'Connor Rec Center", 39.332122, -76.621277, "-1", false, R.drawable.athleticcenter);
+            ObjectiveItem obj4 = new ObjectiveItem("Charles Street Market", 39.328930, -76.617253, "-1", false, R.drawable.charmar);
+            ObjectiveItem obj5 = new ObjectiveItem("The Beach", 39.329096, -76.618497, "-1", false, R.drawable.beach);
+            ObjectiveItem obj6 = new ObjectiveItem("Malone Hall", 39.326191, -76.620853, "-1", false, R.drawable.malonehall);
+            ObjectiveItem obj7 = new ObjectiveItem("Homewood Museum", 39.329722, -76.618962, "-1", false, R.drawable.homewoodmuseum);
+            ObjectiveItem obj8 = new ObjectiveItem("University Market", 39.327828, -76.615817, "-1", false, R.drawable.unimini);
+            ObjectiveItem obj9 = new ObjectiveItem("Gilman Hall", 39.328982, -76.621362, "-1", false, R.drawable.gilmanhall);
 
+            obj1.setDescription("Campus icon, gets spray painted all the time.");
+            obj2.setDescription("A place of eternal student suffering.");
+            obj3.setDescription("Get jacked.");
+            obj4.setDescription("Dump your dining dollars here.");
+            obj5.setDescription("Names can be deceiving.");
+            obj6.setDescription("Nicest building on campus.");
+            obj7.setDescription("We have a museum on campus?");
+            obj8.setDescription("Nice.");
+            obj9.setDescription("Featured in every Hopkins photo ever.");
+
+            objectiveItems = new ArrayList<ObjectiveItem>(Arrays.asList(obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9));
             Collections.shuffle(objectiveItems);
-            for (int i = 0; i < 4; i++) {
+            displayedObjectiveItems = new ArrayList<ObjectiveItem>();
+            for (int i = 0; i < 6; i++) {
                 displayedObjectiveItems.add(objectiveItems.get(i));
             }
 
@@ -92,8 +96,11 @@ public class ObjectivesListFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ObjectiveItem objective = aa.getItem(position);
                 Intent intent = new Intent(getActivity(), ObjectiveDetail.class);
-                intent.putExtra("location", objective.getLocation());
+                intent.putExtra("name", objective.getName());
+                intent.putExtra("lat", objective.getLat());
+                intent.putExtra("long", objective.getLong());
                 intent.putExtra("when", objective.getWhen());
+                intent.putExtra("description", objective.getDescription());
                 intent.putExtra("found", objective.getFound());
                 intent.putExtra("image", objective.getImage());
                 Log.d("myTag", "HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
