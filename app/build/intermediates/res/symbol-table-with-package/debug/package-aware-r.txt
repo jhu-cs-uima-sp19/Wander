@@ -1281,6 +1281,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id finishText
 id fixed
 id forever
 id found
@@ -1358,6 +1359,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id restart
 id right
 id right_icon
 id right_side
@@ -1365,6 +1367,7 @@ id satellite
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id scoreText
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1508,6 +1511,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_continue
 layout activity_current_objective
+layout activity_finish
 layout activity_main
 layout activity_objective_detail
 layout activity_objectives

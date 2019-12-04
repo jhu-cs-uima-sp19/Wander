@@ -62,11 +62,23 @@ public class ObjectivesListFragment extends Fragment {
             obj8.setDescription("Nice.");
             obj9.setDescription("Featured in every Hopkins photo ever.");
 
+            obj1.setHint("FFC.");
+            obj2.setHint("Just follow any student and you'll probably end up here.");
+            obj3.setHint("Head north.");
+            obj4.setHint("A little below street level.");
+            obj5.setHint("Don't think you need a hint for this one.");
+            obj6.setHint("Ask a CS major.");
+            obj7.setHint("Fancy looking building.");
+            obj8.setHint("St. Paul Street.");
+            obj9.setHint("Tallest building on campus?");
+
             objectiveItems = new ArrayList<ObjectiveItem>(Arrays.asList(obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9));
             Collections.shuffle(objectiveItems);
             displayedObjectiveItems = new ArrayList<ObjectiveItem>();
+            int totalPoints = 0;
             for (int i = 0; i < 6; i++) {
                 displayedObjectiveItems.add(objectiveItems.get(i));
+                totalPoints += objectiveItems.get(i).getPoints();
             }
 
             String json = gson.toJson(displayedObjectiveItems);
@@ -74,6 +86,8 @@ public class ObjectivesListFragment extends Fragment {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putBoolean("newGame", false);
             editor.putString("objectiveList", json);
+            editor.putInt("possiblePoints", totalPoints);
+            editor.putInt("totalPoints", totalPoints);
             editor.commit();
         }
         else {
