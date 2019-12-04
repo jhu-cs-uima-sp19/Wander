@@ -89,5 +89,23 @@ public class CurrentObjectiveActivity extends Fragment {
         Log.d ("Content Fragment", "onDetach");
         super.onDetach();
     }
+
+    // Verify user is within given number of feet
+    public boolean verifyDistance(double userLat, double userLong, ObjectiveItem curr, double rad) {
+        double objLat = curr.getLat();
+        double objLong = curr.getLong();
+        if ((userLat == objLat) && (userLong == objLong)) {
+            return true;
+        }
+        else {
+            double theta = userLong - objLong;
+            double dist = Math.sin(Math.toRadians(userLat)) * Math.sin(Math.toRadians(objLat)) + Math.cos(Math.toRadians(userLat)) * Math.cos(Math.toRadians(objLat)) * Math.cos(Math.toRadians(theta));
+            dist = Math.acos(dist);
+            dist = Math.toDegrees(dist);
+            dist = dist * 60 * 1.1515 * 5280;
+
+            return dist <= rad;
+        }
+    }
 }
 
