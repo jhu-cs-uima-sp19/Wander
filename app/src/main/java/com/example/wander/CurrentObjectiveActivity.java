@@ -44,7 +44,7 @@ public class CurrentObjectiveActivity extends Fragment {
         String json = sharedPref.getString("objectiveList", "none");
         displayedObjectiveItems = gson.fromJson(json, new TypeToken<List<ObjectiveItem>>(){}.getType());
 
-        rootView.findViewById(R.id.imageView).setBackgroundResource(displayedObjectiveItems.get(0).getImage());
+        rootView.findViewById(R.id.currentObjectiveImage).setBackgroundResource(displayedObjectiveItems.get(0).getImage());
 
         foundIt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
