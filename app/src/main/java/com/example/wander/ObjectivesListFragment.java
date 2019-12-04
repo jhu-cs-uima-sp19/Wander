@@ -42,15 +42,15 @@ public class ObjectivesListFragment extends Fragment {
         Gson gson = new Gson();
 
         if (newGame) {
-            ObjectiveItem obj1 = new ObjectiveItem("Blue Jay Statue", 39.331089, -76.619615, "-1", false, R.drawable.bluejaystatue);
-            ObjectiveItem obj2 = new ObjectiveItem("Brody Learning Commons", 39.328436, -76.619415, "-1", false, R.drawable.brody);
-            ObjectiveItem obj3 = new ObjectiveItem("O'Connor Rec Center", 39.332122, -76.621277, "-1", false, R.drawable.athleticcenter);
-            ObjectiveItem obj4 = new ObjectiveItem("Charles Street Market", 39.328930, -76.617253, "-1", false, R.drawable.charmar);
-            ObjectiveItem obj5 = new ObjectiveItem("The Beach", 39.329096, -76.618497, "-1", false, R.drawable.beach);
-            ObjectiveItem obj6 = new ObjectiveItem("Malone Hall", 39.326191, -76.620853, "-1", false, R.drawable.malonehall);
-            ObjectiveItem obj7 = new ObjectiveItem("Homewood Museum", 39.329722, -76.618962, "-1", false, R.drawable.homewoodmuseum);
-            ObjectiveItem obj8 = new ObjectiveItem("University Market", 39.327828, -76.615817, "-1", false, R.drawable.unimini);
-            ObjectiveItem obj9 = new ObjectiveItem("Gilman Hall", 39.328982, -76.621362, "-1", false, R.drawable.gilmanhall);
+            ObjectiveItem obj1 = new ObjectiveItem("Blue Jay Statue", R.drawable.bluejaystatue, 20, 39.331089, -76.619615);
+            ObjectiveItem obj2 = new ObjectiveItem("Brody Learning Commons", R.drawable.brody, 10, 39.328436, -76.619415);
+            ObjectiveItem obj3 = new ObjectiveItem("O'Connor Rec Center", R.drawable.athleticcenter, 30, 39.332122, -76.621277);
+            ObjectiveItem obj4 = new ObjectiveItem("Charles Street Market", R.drawable.charmar, 20, 39.328930, -76.617253);
+            ObjectiveItem obj5 = new ObjectiveItem("The Beach", R.drawable.beach, 10, 39.329096, -76.618497);
+            ObjectiveItem obj6 = new ObjectiveItem("Malone Hall", R.drawable.malonehall, 40, 39.326191, -76.620853);
+            ObjectiveItem obj7 = new ObjectiveItem("Homewood Museum", R.drawable.homewoodmuseum, 20, 39.329722, -76.618962);
+            ObjectiveItem obj8 = new ObjectiveItem("University Market", R.drawable.unimini, 20, 39.327828, -76.615817);
+            ObjectiveItem obj9 = new ObjectiveItem("Gilman Hall", R.drawable.gilmanhall, 20, 39.328982, -76.621362);
 
             obj1.setDescription("Campus icon, gets spray painted all the time.");
             obj2.setDescription("A place of eternal student suffering.");
@@ -97,13 +97,13 @@ public class ObjectivesListFragment extends Fragment {
                 ObjectiveItem objective = aa.getItem(position);
                 Intent intent = new Intent(getActivity(), ObjectiveDetail.class);
                 intent.putExtra("name", objective.getName());
+                intent.putExtra("image", objective.getImage());
+                intent.putExtra("description", objective.getDescription());
+                intent.putExtra("points", objective.getPoints());
                 intent.putExtra("lat", objective.getLat());
                 intent.putExtra("long", objective.getLong());
-                intent.putExtra("when", objective.getWhen());
-                intent.putExtra("description", objective.getDescription());
                 intent.putExtra("found", objective.getFound());
-                intent.putExtra("image", objective.getImage());
-                Log.d("myTag", "HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+                intent.putExtra("when", objective.getWhen());
                 startActivity(intent);
             }
         });

@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // Add a marker at Blue Jay Statue and move the camera
         LatLng blueJay = new LatLng(39.331089, -76.619615);
-        mMap.addMarker(new MarkerOptions().position(blueJay).title("Marker at Blue Jay Statue"));
+        mMap.addMarker(new MarkerOptions().position(blueJay).title("Blue Jay Statue"));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(blueJay,15));
     }
 
