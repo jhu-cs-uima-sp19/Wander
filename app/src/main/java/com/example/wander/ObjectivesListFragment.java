@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -119,6 +120,10 @@ public class ObjectivesListFragment extends Fragment {
                 intent.putExtra("found", objective.getFound());
                 intent.putExtra("when", objective.getWhen());
                 startActivity(intent);
+                if (intent.getBooleanExtra("change", true)) {
+                    ImageView img = (ImageView)getActivity().findViewById(R.id.currentObjectiveImage);
+                    img.setImageResource(objective.getImage());
+                }
             }
         });
         return rootView;

@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -41,6 +42,7 @@ public class CurrentObjectiveActivity extends Fragment {
                     });
 
         }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.activity_current_objective, container, false);
     }

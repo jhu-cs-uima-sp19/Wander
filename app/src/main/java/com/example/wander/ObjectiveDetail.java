@@ -2,7 +2,9 @@ package com.example.wander;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,6 +43,11 @@ public class ObjectiveDetail extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    public void setCurrent(View v) {
+        getIntent().putExtra("change", true);
+        finish();
     }
 
 }
