@@ -2,6 +2,9 @@ package com.example.wander;
 
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -13,20 +16,40 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Button;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CurrentObjectiveActivity extends Fragment {
     private FusedLocationProviderClient fusedLocationClient;
     private Location currentLocation;
-    private double tempLong;
+    static ArrayList<ObjectiveItem> displayedObjectiveItems = new ArrayList<ObjectiveItem>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.activity_current_objective, container, false);
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
+        final Button foundIt = rootView.findViewById(R.id.found);
+        Gson gson = new Gson();
+        SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        String json = sharedPref.getString("objectiveList", "none");
+        displayedObjectiveItems = gson.fromJson(json, new TypeToken<List<ObjectiveItem>>(){}.getType());
+
+        rootView.findViewById(R.id.imageView).setBackgroundResource(displayedObjectiveItems.get(0).getImage());
+
+        foundIt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            }
+        });
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation()
@@ -44,7 +67,7 @@ public class CurrentObjectiveActivity extends Fragment {
         }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_current_objective, container, false);
+        return rootView;
     }
     // Called at the start of the visible lifetime.
     @Override
