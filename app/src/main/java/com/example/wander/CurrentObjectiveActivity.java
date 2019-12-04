@@ -1,19 +1,46 @@
 package com.example.wander;
 
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 public class CurrentObjectiveActivity extends Fragment {
+    private FusedLocationProviderClient fusedLocationClient;
+    private Location currentLocation;
+    private double tempLong;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            // Got last known location. In some rare situations this can be null.
+                            if (location != null) {
+                                currentLocation = location;
+                            }
 
+                        }
+                    });
+
+        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.activity_current_objective, container, false);
     }

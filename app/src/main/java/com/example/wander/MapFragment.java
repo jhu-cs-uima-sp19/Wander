@@ -77,7 +77,7 @@ public class MapFragment extends Fragment {
                                     // Got last known location. In some rare situations this can be null.
                                     if (location != null) {
                                         currentLocation = location;
-                                        Log.d("myTag", ""+location.getLongitude());
+                                        //Log.d("myTag", ""+location.getLongitude());
                                     }
                                 }
                             });
