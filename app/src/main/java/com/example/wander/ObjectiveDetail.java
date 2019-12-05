@@ -31,6 +31,8 @@ public class ObjectiveDetail extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         final int image = extras.getInt("image");
         final String location = extras.getString("name");
+        final double lat = extras.getDouble("lat");
+        final double lng = extras.getDouble("lng");
         String description = extras.getString("description");
         String date = extras.getString("when");
 
@@ -46,6 +48,8 @@ public class ObjectiveDetail extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putInt("currImage", image);
                 editor.putString("currName", location);
+                editor.putString("currLat", String.valueOf(lat));
+                editor.putString("currLong", String.valueOf(lng));
                 editor.commit();
                 onBackPressed();
             }
