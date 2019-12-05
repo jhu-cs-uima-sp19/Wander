@@ -11,6 +11,7 @@
 9-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml
 10
 11    <permission
+<<<<<<< Updated upstream
 11-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:36:5-38:46
 12        android:name="com.example.wander.permission.MAPS_RECEIVE"
 12-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:37:9-66
@@ -32,6 +33,29 @@
 19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 19-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:43:5-78
 19-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:43:22-76
+=======
+11-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:35:5-37:46
+12        android:name="com.example.wander.permission.MAPS_RECEIVE"
+12-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:36:9-66
+13        android:protectionLevel="signature" />
+13-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:37:9-44
+14
+15    <uses-permission android:name="com.example.wander.permission.MAPS_RECEIVE" />
+15-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:38:5-81
+15-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:38:22-79
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:39:5-80
+16-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:39:22-78
+17    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+17-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:40:5-97
+17-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:40:22-95
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+18-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:41:5-80
+18-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:41:22-78
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+19-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:42:5-78
+19-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:42:22-76
+>>>>>>> Stashed changes
 20    <!-- Include required permissions for Google Maps API to run. -->
 21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\hjliz\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
@@ -48,7 +72,11 @@
 26-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\hjliz\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 27
 28    <application
+<<<<<<< Updated upstream
 28-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:5:5-35:19
+=======
+28-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:5:5-34:19
+>>>>>>> Stashed changes
 29        android:allowBackup="true"
 29-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:6:9-35
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -103,6 +131,7 @@
 55-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:17:27-74
 56            </intent-filter>
 57        </activity>
+<<<<<<< Updated upstream
 58        <activity android:name="com.example.wander.ObjectiveDetail" >
 58-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:28:9-30:20
 58-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:28:19-50
@@ -114,6 +143,21 @@
 62-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:33:13-43
 63            android:resource="@array/preloaded_fonts" />
 63-->C:\Users\hjliz\UIMA\GroupApp7\Wander\app\src\main\AndroidManifest.xml:34:13-54
+=======
+58        <activity android:name="com.example.wander.ObjectiveDetail" />
+58-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:28:9-62
+58-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:28:19-50
+59        <activity android:name="com.example.wander.FinishActivity" />
+59-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:29:9-61
+59-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:29:19-49
+60
+61        <meta-data
+61-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:31:9-33:57
+62            android:name="preloaded_fonts"
+62-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:32:13-43
+63            android:resource="@array/preloaded_fonts" />
+63-->/Users/khong/Desktop/uima/Wander/app/src/main/AndroidManifest.xml:33:13-54
+>>>>>>> Stashed changes
 64        <!-- Needs to be explicitly declared on P+ -->
 65        <uses-library
 65-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\hjliz\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40

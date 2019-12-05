@@ -63,6 +63,7 @@ public class CurrentObjectiveActivity extends Fragment {
                                         float objLong = sharedPref.getFloat("currLong", 0f);
 
                                         if (verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), objLat, objLong, 20000)) {
+                                            boolean allFound = true;
                                             for (ObjectiveItem obj: displayedObjectiveItems) {
                                                 if (obj.getName().equals(name)) {
                                                     obj.setFound(true);
@@ -72,6 +73,16 @@ public class CurrentObjectiveActivity extends Fragment {
                                                     editor.putString("objectiveList", json);
                                                     editor.commit();
                                                 }
+                                                if (!obj.getFound()) {
+                                                    allFound = false;
+                                                }
+                                            }
+                                            if (allFound) {
+                                                Intent intent = new Intent(getActivity(), FinishActivity.class);
+                                                startActivity(intent);
+                                            } else {
+                                                Intent intent = new Intent(getActivity(), MainActivity.class);
+                                                startActivity(intent);
                                             }
                                         }
                                     }
