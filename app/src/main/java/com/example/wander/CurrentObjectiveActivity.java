@@ -40,17 +40,12 @@ public class CurrentObjectiveActivity extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_current_objective, container, false);
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
         final Button foundIt = rootView.findViewById(R.id.found);
-        Gson gson = new Gson();
-        SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        final Gson gson = new Gson();
+        final SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
         String json = sharedPref.getString("objectiveList", "none");
         displayedObjectiveItems = gson.fromJson(json, new TypeToken<List<ObjectiveItem>>(){}.getType());
 
         rootView.findViewById(R.id.currentObjectiveImage).setBackgroundResource(displayedObjectiveItems.get(0).getImage());
-
-        foundIt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            }
-        });
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation()
@@ -60,6 +55,41 @@ public class CurrentObjectiveActivity extends Fragment {
                             // Got last known location. In some rare situations this can be null.
                             if (location != null) {
                                 currentLocation = location;
+                                foundIt.setOnClickListener(new View.OnClickListener() {
+                                    public void onClick(View v) {
+
+                                        ObjectiveItem currObj = new ObjectiveItem(sharedPref.getString("currName", ""),
+                                                sharedPref.getInt("currImage", 0), 0,
+                                                sharedPref.getFloat("currLat", 0f),
+                                                sharedPref.getFloat("currLong", 0f));
+                                        //int
+                                        /*for (int i = 0; i < displayedObjectiveItems.size(); i++) {
+                                            if (displayedObjectiveItems.get(i).getName().equals(currObj.getName())) {
+
+                                            }
+                                        }*/
+                                        Log.d("aatest", "*********"+currentLocation.getLatitude() + " " + currentLocation.getLongitude());
+                                        Log.d("aatest", "*********"+sharedPref.getFloat("currLat", 0f) + " " + sharedPref.getFloat("currLong", 0f));
+                                        if(verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), currObj, 20000)) {
+
+                                            for (int i = 0; i < displayedObjectiveItems.size(); i++) {
+
+                                                if (displayedObjectiveItems.get(i).getName().equals(currObj.getName())) {
+                                                    displayedObjectiveItems.get(i).setFound(true);
+                                                    displayedObjectiveItems.get(i).setWhen("Found");
+                                                    String json = gson.toJson(displayedObjectiveItems);
+                                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                                    editor.putString("objectiveList", json);
+                                                    editor.commit();
+
+                                                }
+                                            }
+
+
+                                        }
+
+                                    }
+                                });
                             }
 
                         }

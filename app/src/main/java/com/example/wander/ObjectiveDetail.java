@@ -48,8 +48,8 @@ public class ObjectiveDetail extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putInt("currImage", image);
                 editor.putString("currName", location);
-                editor.putString("currLat", String.valueOf(lat));
-                editor.putString("currLong", String.valueOf(lng));
+                editor.putFloat("currLat", (float) lat);
+                editor.putFloat("currLong", (float) lng);
                 editor.commit();
                 onBackPressed();
             }
