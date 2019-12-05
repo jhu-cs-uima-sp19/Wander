@@ -16,11 +16,13 @@ public class ContinueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continue);
 
+        final SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        final boolean isNewGame = sharedPref.getBoolean("newGame", true);
+
         final Button newGame = findViewById(R.id.new_game);
         newGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
-                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("newGame", true);
                 editor.putInt("currImage", -1);
@@ -33,8 +35,7 @@ public class ContinueActivity extends AppCompatActivity {
         final Button continueGame = findViewById(R.id.continue_game);
         continueGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
-                if (!sharedPref.getBoolean("newGame", true)) {
+                if (!isNewGame) {
                     Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
                     startActivity(intent);
                 }

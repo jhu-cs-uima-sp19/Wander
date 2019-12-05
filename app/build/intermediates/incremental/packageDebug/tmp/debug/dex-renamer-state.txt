@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 #Wed Dec 04 20:44:35 EST 2019
 base.0=C\:\\Users\\hjliz\\UIMA\\GroupApp7\\Wander\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+=======
+#Wed Dec 04 20:11:50 EST 2019
+base.0=/Users/khong/Desktop/uima/Wander/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+>>>>>>> Stashed changes
 path.0=classes.dex
 renamed.0=classes.dex
