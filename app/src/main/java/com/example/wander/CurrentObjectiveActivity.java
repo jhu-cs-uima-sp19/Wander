@@ -42,7 +42,7 @@ public class CurrentObjectiveActivity extends Fragment {
         final Button foundIt = rootView.findViewById(R.id.found);
         final Gson gson = new Gson();
         final SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
-        String json = sharedPref.getString("objectiveList", "none");
+        String json = sharedPref.getString("objectiveList", "");
         displayedObjectiveItems = gson.fromJson(json, new TypeToken<List<ObjectiveItem>>(){}.getType());
 
         rootView.findViewById(R.id.currentObjectiveImage).setBackgroundResource(displayedObjectiveItems.get(0).getImage());
@@ -57,35 +57,24 @@ public class CurrentObjectiveActivity extends Fragment {
                                 currentLocation = location;
                                 foundIt.setOnClickListener(new View.OnClickListener() {
                                     public void onClick(View v) {
+                                        String name = sharedPref.getString("currName", "");
+                                        float objLat = sharedPref.getFloat("currLat", 0f);
+                                        float objLong = sharedPref.getFloat("currLong", 0f);
 
-                                        ObjectiveItem currObj = new ObjectiveItem(sharedPref.getString("currName", ""),
-                                                sharedPref.getInt("currImage", 0), 0,
-                                                sharedPref.getFloat("currLat", 0f),
-                                                sharedPref.getFloat("currLong", 0f));
-                                        //int
-                                        /*for (int i = 0; i < displayedObjectiveItems.size(); i++) {
-                                            if (displayedObjectiveItems.get(i).getName().equals(currObj.getName())) {
-
-                                            }
-                                        }*/
                                         Log.d("aatest", "*********"+currentLocation.getLatitude() + " " + currentLocation.getLongitude());
                                         Log.d("aatest", "*********"+sharedPref.getFloat("currLat", 0f) + " " + sharedPref.getFloat("currLong", 0f));
-                                        if(verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), currObj, 20000)) {
+                                        if (verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), objLat, objLong, 20000)) {
 
-                                            for (int i = 0; i < displayedObjectiveItems.size(); i++) {
-
-                                                if (displayedObjectiveItems.get(i).getName().equals(currObj.getName())) {
-                                                    displayedObjectiveItems.get(i).setFound(true);
-                                                    displayedObjectiveItems.get(i).setWhen("Found");
+                                            for (ObjectiveItem obj: displayedObjectiveItems) {
+                                                if (obj.getName().equals(name)) {
+                                                    obj.setFound(true);
+                                                    obj.setWhen("Found");
                                                     String json = gson.toJson(displayedObjectiveItems);
                                                     SharedPreferences.Editor editor = sharedPref.edit();
                                                     editor.putString("objectiveList", json);
                                                     editor.commit();
-
                                                 }
                                             }
-
-
                                         }
 
                                     }
@@ -183,9 +172,7 @@ public class CurrentObjectiveActivity extends Fragment {
     }
 
     // Verify user is within given number of feet
-    public boolean verifyDistance(double userLat, double userLong, ObjectiveItem curr, double rad) {
-        double objLat = curr.getLat();
-        double objLong = curr.getLong();
+    public boolean verifyDistance(double userLat, double userLong, double objLat, double objLong, double rad) {
         if ((userLat == objLat) && (userLong == objLong)) {
             return true;
         }
