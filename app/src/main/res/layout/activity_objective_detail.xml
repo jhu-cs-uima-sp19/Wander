@@ -68,11 +68,13 @@
         android:layout_width="200dp"
         android:layout_height="32dp"
         android:layout_marginStart="48dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="88dp"
         android:text="DateFound"
         android:textAlignment="center"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/set_current" />
 
     <Button
