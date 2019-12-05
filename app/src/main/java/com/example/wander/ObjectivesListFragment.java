@@ -124,4 +124,25 @@ public class ObjectivesListFragment extends Fragment {
         });
         return rootView;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        SharedPreferences sharedPref = this.getActivity().getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+
+        String response = sharedPref.getString("objectiveList", "");
+        displayedObjectiveItems = gson.fromJson(response,
+                new TypeToken<List<ObjectiveItem>>(){}.getType());
+
+        objectivesList = this.getActivity().findViewById(R.id.objectivelist);
+        // make array adapter to bind arraylist to listview with new custom item layout
+        aa = new ObjectiveItemAdapter(getActivity().getApplicationContext(), R.layout.objective_item_layout, displayedObjectiveItems);
+        objectivesList.setAdapter(aa);
+
+        registerForContextMenu(objectivesList);
+
+        aa.notifyDataSetChanged();
+    }
 }

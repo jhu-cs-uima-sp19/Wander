@@ -32,7 +32,7 @@ public class ObjectiveDetail extends AppCompatActivity {
         final int image = extras.getInt("image");
         final String location = extras.getString("name");
         final double lat = extras.getDouble("lat");
-        final double lng = extras.getDouble("lng");
+        final double lng = extras.getDouble("long");
         String description = extras.getString("description");
         String date = extras.getString("when");
 

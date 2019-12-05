@@ -11,6 +11,8 @@ import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,10 +62,7 @@ public class CurrentObjectiveActivity extends Fragment {
                                         float objLat = sharedPref.getFloat("currLat", 0f);
                                         float objLong = sharedPref.getFloat("currLong", 0f);
 
-                                        Log.d("aatest", "*********"+currentLocation.getLatitude() + " " + currentLocation.getLongitude());
-                                        Log.d("aatest", "*********"+sharedPref.getFloat("currLat", 0f) + " " + sharedPref.getFloat("currLong", 0f));
                                         if (verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), objLat, objLong, 20000)) {
-
                                             for (ObjectiveItem obj: displayedObjectiveItems) {
                                                 if (obj.getName().equals(name)) {
                                                     obj.setFound(true);
@@ -75,7 +74,6 @@ public class CurrentObjectiveActivity extends Fragment {
                                                 }
                                             }
                                         }
-
                                     }
                                 });
                             }
