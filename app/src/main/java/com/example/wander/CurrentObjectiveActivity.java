@@ -45,7 +45,6 @@ public class CurrentObjectiveActivity extends Fragment {
         String json = sharedPref.getString("objectiveList", "none");
         displayedObjectiveItems = gson.fromJson(json, new TypeToken<List<ObjectiveItem>>(){}.getType());
 
-        rootView.findViewById(R.id.currentObjectiveImage).setBackgroundResource(displayedObjectiveItems.get(0).getImage());
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation()
