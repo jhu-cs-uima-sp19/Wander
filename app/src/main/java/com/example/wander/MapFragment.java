@@ -61,11 +61,6 @@ public class MapFragment extends Fragment {
                     }
                 }
 
-                // TODO: Focus camera on user location
-                LatLng blueJay = new LatLng(39.331089, -76.619615);
-                mMap.addMarker(new MarkerOptions().position(blueJay).title("Marker at Blue Jay Statue"));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(blueJay,15));
-
                 //requestPermissions(FINE_LOCATION_PERMS, 1);
                 if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                         == PackageManager.PERMISSION_GRANTED) {
