@@ -120,10 +120,6 @@ public class ObjectivesListFragment extends Fragment {
                 intent.putExtra("found", objective.getFound());
                 intent.putExtra("when", objective.getWhen());
                 startActivity(intent);
-                if (intent.getBooleanExtra("change", true)) {
-                    ImageView img = (ImageView)getActivity().findViewById(R.id.currentObjectiveImage);
-                    img.setImageResource(objective.getImage());
-                }
             }
         });
         return rootView;

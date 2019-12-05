@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -28,8 +29,8 @@ public class ObjectiveDetail extends AppCompatActivity {
         TextView date_detail = (TextView) findViewById(R.id.when_text);
 
         Bundle extras = getIntent().getExtras();
-        int image = extras.getInt("image");
-        String location = extras.getString("name");
+        final int image = extras.getInt("image");
+        final String location = extras.getString("name");
         String description = extras.getString("description");
         String date = extras.getString("when");
 
@@ -37,17 +38,24 @@ public class ObjectiveDetail extends AppCompatActivity {
         location_desc.setText(description);
         date_detail.setText(date);
         location_image.setImageResource(image);
+
+        final Button setCurrent = findViewById(R.id.set_current);
+        setCurrent.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt("currImage", image);
+                editor.putString("currName", location);
+                editor.commit();
+                onBackPressed();
+            }
+        });
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
-    }
-
-    public void setCurrent(View v) {
-        getIntent().putExtra("change", true);
-        finish();
     }
 
 }

@@ -1254,6 +1254,8 @@ id content
 id contentPanel
 id continue_game
 id coordinator
+id currentObjectiveImage
+id currentObjectiveName
 id custom
 id customPanel
 id dark
@@ -1299,7 +1301,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
 id info
 id invisible
 id italic

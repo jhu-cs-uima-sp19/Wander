@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -82,8 +83,17 @@ public class CurrentObjectiveActivity extends Fragment {
     public void onResume(){
         super.onResume();
         Log.d ("Content Fragment", "onResume");
-        // Resume any paused UI updates, threads, or processes required
-        // by the Fragment but suspended when it became inactive.
+        SharedPreferences sharedPref = getContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
+        int image = sharedPref.getInt("currImage", -1);
+        String name = sharedPref.getString("currName", "No objective selected!");
+
+        ImageView img = (ImageView) getActivity().findViewById(R.id.currentObjectiveImage);
+        if (image != -1) {
+            img.setImageResource(image);
+        }
+
+        TextView location = (TextView) getActivity().findViewById(R.id.currentObjectiveName);
+        location.setText(name);
     }
 
     // Called at the end of the active lifetime.

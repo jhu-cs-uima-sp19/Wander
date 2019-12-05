@@ -23,6 +23,8 @@ public class ContinueActivity extends AppCompatActivity {
                 SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("newGame", true);
+                editor.putInt("currImage", -1);
+                editor.putString("currName", null);
                 editor.commit();
                 startActivity(intent);
             }
@@ -31,12 +33,11 @@ public class ContinueActivity extends AppCompatActivity {
         final Button continueGame = findViewById(R.id.continue_game);
         continueGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
                 SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("gameState", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putBoolean("newGame", false);
-                editor.commit();
-                startActivity(intent);
+                if (!sharedPref.getBoolean("newGame", true)) {
+                    Intent intent = new Intent(ContinueActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
