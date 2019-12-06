@@ -13,4 +13,5 @@ with more details. Hitting the set current button in the objective details upada
 
 Extra notes- The current radius is set at 20000 feet for finding a location for purposes of testing. This radius can be changed by editing 
 the rad parameter of the verify distance method on line 65 of the CurrentObjectiveActivity java file. In the android device settings permission
-need to be given to our app to access the current location.The current GPS location of the virtualandroid devices is typically set to the Googleplex in California. This location can be edited in the extended controls of the virtual device. 
+need to be given to our app to access the current location.The current GPS location of the virtualandroid devices is typically set to the Googleplex in California. 
+This location can be edited in the extended controls of the virtual device. 
