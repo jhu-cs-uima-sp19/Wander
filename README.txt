@@ -1,15 +1,17 @@
-Due to the unexpected departure of one of our group members, we had to modify some of the requirements for this project. 
-So far, we have a launch activity that lets users start a new game or continue an existing game, as well as a main activity 
-that is split into 3 tabs (map, current objective, objectives list).
+Our app is a GPS based scavenger hunt game called Wander. The games contains three main screens that can be navigated to by the
+bottom menu of tabs. 
 
-Map fragment - We had a lot of trouble with getting GPS to work, especially with tracking the current location of the device 
-and dynamically updating the display. Currently, our map places a marker where the current objective is located, which can serve 
-as a "hint" for the player, since they now have no idea where they are positioned on the map.
+Map fragment - This screen displays a map of the user's current location using the Google Maps API. The user is displayed as the
+typical blue dot on the map and the objectives that the user successfully finds get marked by a pin.
 
-Current objective fragment - Shows an image of the current objective, along with a button for when the user finds the objective.
+Current objective fragment - Shows an image of the current objective, along with a button for when the user finds the objective. When
+the user is close enough to the objective and they hit the button a pin is dropped on the map and the location is marked as found. The
+current objective can be set in the objective details in the objective list fragment.
 
 Objectives list fragment - Shows a randomized list of objectives for each game, and pressing an objective will display a new activity 
-with more details.
+with more details. Hitting the set current button in the objective details upadates the current objective in the current objective fragment.
 
-Eventually, we would like to implement a firebase databases to store all the objectives. This would allow us to dynamically update
-what objectives are found by the user when they click the found button. We would also be able to save a user's current game objectives.
+Extra notes- The current radius is set at 20000 feet for finding a location for purposes of testing. This radius can be changed by editing 
+the rad parameter of the verify distance method on line 65 of the CurrentObjectiveActivity java file. In the android device settings permission
+need to be given to our app to access the current location.The current GPS location of the virtualandroid devices is typically set to the Googleplex in 
+California. This location can be edited in the extended controls of the virtual device. 
