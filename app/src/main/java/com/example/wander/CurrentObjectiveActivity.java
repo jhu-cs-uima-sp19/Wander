@@ -62,7 +62,7 @@ public class CurrentObjectiveActivity extends Fragment {
                                         float objLat = sharedPref.getFloat("currLat", 0f);
                                         float objLong = sharedPref.getFloat("currLong", 0f);
 
-                                        if (verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), objLat, objLong, 20000)) {
+                                        if (verifyDistance(currentLocation.getLatitude(), currentLocation.getLongitude(), objLat, objLong, 500)) {
                                             boolean allFound = true;
                                             for (ObjectiveItem obj: displayedObjectiveItems) {
                                                 if (obj.getName().equals(name)) {
